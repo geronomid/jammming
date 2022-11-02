@@ -76,6 +76,25 @@ const Spotify = {
             }); 
         });
 
+    },
+
+    checkPlayList(searchResults, currentPlayList){
+        let results = searchResults;
+        if (results.length !== 0) {
+            for (let i = 0; i < currentPlayList.length; i++){
+                for (let z = 0; z <results.length; z++){
+                    if (currentPlayList[i].uri === results[z].uri){
+                        results.splice(z,1);
+                        break;
+                    }
+               
+                }
+                
+                
+            }
+        }
+        return results;
+
     }
 }
 
